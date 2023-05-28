@@ -1,8 +1,8 @@
 const canvaDiv = document.getElementById('canvaDiv');
 const gridSlider = document.getElementById('gridSlider');
 const clearButton = document.getElementById('clearButton');
-let color = 'black';
-let pressed = false;
+
+
 
 isPressed();
 createCanvas();
@@ -24,11 +24,19 @@ function createCanvas() {
     }
 }
 
+let pressed = false;
+let blackCount = 1;
 function paint(element) {
     if(pressed) {
-        element.currentTarget.style.backgroundColor = color;
+        let paintColor = 
+        `rgb(${random(255)}, ${random(255)}, ${random(255)}`;
+        blackCount += 1;
+        if(blackCount > 10) {
+            paintColor = 'black';
+            blackCount = 0;
+        } 
+        element.currentTarget.style.backgroundColor = paintColor;
     }
-
 }
 
 function isPressed() {
@@ -44,4 +52,8 @@ function isPressed() {
 function removeAllChildren (element) {
     while(element.firstChild)
         element.removeChild(element.firstChild)
+}
+
+function random(num) {
+    return Math.floor(Math.random() * num);
 }
