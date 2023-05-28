@@ -21,7 +21,6 @@ h1 {
     flex-flow: column wrap-reverse;
     justify-content: center;
     align-items: center;
-
 }
 
 #canvaDiv {
@@ -30,9 +29,28 @@ h1 {
     flex-wrap: wrap;
     height: 600px;
     width: 600px;
+    margin: 1vh;
 }
   
 .canvaSquare {
     border: 1px solid darkgray;
     flex: 1;
+    border-radius: 12%;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 1vh;
+}
+
+#gridSlider {
+    border-radius: 0px;
+}
+
+#clearButton {
+    border: 1px solid gray;
+    border-radius: 15px;
+    height: 30px;
+    width: 100px;
 }

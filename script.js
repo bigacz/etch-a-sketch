@@ -1,16 +1,20 @@
 const canvaDiv = document.getElementById('canvaDiv');
-const gridSlider = document.getElementById('gridSlider')
+const gridSlider = document.getElementById('gridSlider');
+const clearButton = document.getElementById('clearButton');
 let color = 'black';
+let pressed = false;
 
+isPressed();
 createCanvas();
-gridSlider.addEventListener('click', createCanvas)
+
+clearButton.addEventListener('click', createCanvas);
+gridSlider.addEventListener('click', createCanvas);
 
 function createCanvas() {
     const gridSize = gridSlider.value;
     const flexBasisValue = 
     Math.floor((100 / gridSize) * 1000) / 1000; 
     removeAllChildren(canvaDiv);
-    console.log(flexBasisValue);
     for(i = 0; i < gridSize**2; i++) {
         const canvaSquare = document.createElement('div');
         canvaSquare.classList.add('canvaSquare');
@@ -18,12 +22,23 @@ function createCanvas() {
         canvaSquare.addEventListener('mouseover', e => paint(e))
         canvaDiv.appendChild(canvaSquare);
     }
-    document.get
 }
 
-
 function paint(element) {
-    element.currentTarget.style.backgroundColor = color;
+    if(pressed) {
+        element.currentTarget.style.backgroundColor = color;
+    }
+
+}
+
+function isPressed() {
+    window.onmousedown = () =>{
+        pressed = true;
+    }
+    window.onmouseup = () =>{
+        pressed = false;
+    }
+    
 }
 
 function removeAllChildren (element) {
