@@ -1,8 +1,21 @@
 const canvaDiv = document.getElementById('canvaDiv');
 const gridSlider = document.getElementById('gridSlider');
+
 const clearButton = document.getElementById('clearButton');
+clearButton.addEventListener(`mouseover`, e =>
+    e.currentTarget.classList.add(`clearActive`));
+clearButton.addEventListener(`mouseleave`, e =>
+    e.currentTarget.classList.remove(`clearActive`));
 
-
+const githubIcon = document.getElementById(`githubIcon`)
+    githubIcon.addEventListener(`mouseover`, e => {
+        e.currentTarget.classList.add(`githubHover`);
+    })
+    
+    githubIcon.addEventListener(`mouseleave`, e => {
+        e.currentTarget.classList.remove(`githubHover`);
+    })
+    
 
 isPressed();
 createCanvas();

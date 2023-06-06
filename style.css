@@ -3,11 +3,14 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: rgb(175, 175, 175);
+    color: #cfcfcf;
 }
 
 body {
     height: 100vh;
+    background-color: #505050;
+    display: flex;
+    flex-flow: column;
 }
 
 h1 {
@@ -21,6 +24,7 @@ h1 {
     flex-flow: column wrap-reverse;
     justify-content: center;
     align-items: center;
+    flex: 1;
 }
 
 #canvaDiv {
@@ -33,7 +37,7 @@ h1 {
 }
   
 .canvaSquare {
-    border: 1px solid rgb(70, 68, 68);
+    border: 1px solid #202020;
     flex: 1;
     border-radius: 12%;
 }
@@ -49,8 +53,30 @@ h1 {
 }
 
 #clearButton {
-    border: 1px solid rgb(70, 68, 68);
+    border: 1px solid #202020;
+    background-color: #404040;
     border-radius: 15px;
     height: 30px;
     width: 100px;
+    transition: all 0.1s;
+}
+
+.clearActive {
+    transform: scale(1.1);
+}
+
+footer {
+    background-color: #202020;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    flex: 0 1 40px;
+    gap: 20px;
+    font-size: 25px;
+    font-family: Tahoma, sans-serif;
+}
+
+.githubHover {
+    transform: scale(1.1);
 }
